@@ -1,0 +1,17 @@
+{
+  "id": "swan_home_bitable_sync_1",
+  "pluginKey": "@official-plugins/feishu-bitable",
+  "pluginVersion": "1.0.22",
+  "name": "天鹅到家线索数据同步飞书多维表格",
+  "description": "将天鹅到家线索系统的线索数据和需求数据同步到指定飞书多维表格，支持批量新增和批量更新记录操作",
+  "icon": "",
+  "paramsSchema": {},
+  "formValue": {
+    "appToken": "C15VbW9BWaMGz9sQ5O6cDPgDnOd",
+    "tableID": "tblXd4dMIJ6fUt9D",
+    "fields": []
+  },
+  "createdAt": 1786376083718,
+  "updatedAt": 1786376083718,
+  "createdBy": 7664449830109842612
+}

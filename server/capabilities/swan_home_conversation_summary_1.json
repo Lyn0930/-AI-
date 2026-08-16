@@ -1,0 +1,27 @@
+{
+  "id": "swan_home_conversation_summary_1",
+  "pluginKey": "@official-plugins/ai-text-summary",
+  "pluginVersion": "1.0.9",
+  "name": "天鹅到家客服对话摘要生成",
+  "description": "对天鹅到家客服与客户的对话记录进行智能摘要，流式输出摘要结果",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "conversation_text": {
+        "type": "string",
+        "description": "客服与客户的完整对话文本"
+      }
+    },
+    "required": [
+      "conversation_text"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "content": "{{input.conversation_text}}",
+    "requirement": "请根据下面这段\"雇主-小书\"对话，生成 200 字以内的专业摘要，覆盖：\n1. 客户基本信息（姓名、城市、服务类型）\n2. 核心需求（家庭情况/房屋面积/老人小孩情况/月休/特殊要求/预算）\n3. 当前对话阶段（采集中/已转人工/已流失）\n4. 客服跟进建议\n\n格式：分点列出，不要超过 200 字。"
+  },
+  "createdAt": 1786372370287,
+  "updatedAt": 1786626450881,
+  "createdBy": 7664449830109842612
+}

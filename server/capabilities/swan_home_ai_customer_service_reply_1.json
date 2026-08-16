@@ -1,0 +1,46 @@
+{
+  "id": "swan_home_ai_customer_service_reply_1",
+  "pluginKey": "@official-plugins/ai-text-generate",
+  "pluginVersion": "1.0.18",
+  "name": "天鹅到家家政服务顾问智能对话回复",
+  "description": "天鹅到家家政服务顾问'小书'根据对话历史和需求采集清单自动生成回复，支持住家保姆、白班/钟点、月嫂、育儿嫂、养老陪护等全品类家政服务，按服务类型切换话术流程",
+  "icon": "",
+  "paramsSchema": {
+    "properties": {
+      "conversation_history": {
+        "type": "string",
+        "description": "历史对话记录"
+      },
+      "collected_requirements": {
+        "type": "string",
+        "description": "已收集的客户需求信息"
+      },
+      "latest_customer_message": {
+        "description": "客户最新发送的消息",
+        "type": "string"
+      },
+      "persona": {
+        "description": "小书人设信息",
+        "type": "string"
+      }
+    },
+    "required": [
+      "persona",
+      "conversation_history",
+      "collected_requirements",
+      "latest_customer_message"
+    ],
+    "type": "object"
+  },
+  "formValue": {
+    "modelParams": {
+      "temperature": 0.5,
+      "maxTokens": 8192
+    },
+    "prompt": "你是一位专业的家政客服，正在与雇主进行 1 对 1 微信式对话。\n\n【输入】\n- persona：{{input.persona}}\n- conversation_history：{{input.conversation_history}}\n- collected_requirements：{{input.collected_requirements}}\n- latest_customer_message：{{input.latest_customer_message}}\n\n【任务】\n1. 严格遵循 persona 中的\"价格红线\"——不主动给价格区间\n2. 严格遵循 persona 中的\"格式规范\"——重点内容用【】括起来\n3. 严格遵循 persona 中的\"对话流程\"——按 persona 的 7 阶段流程推进\n4. 严格遵循 persona 中的\"边界\"——遇到投诉/反复问价/明显流失意愿立即调 transferToHuman\n5. 客户当前问题先回答，再继续推进流程\n6. 【不复述需求】收到客户回答后，绝对不要复述客户说的内容。用\"好嘞~\"\"了解啦~\"\"记下啦~\"等 2-4 字简短确认\n7. 【禁止提前说推荐阿姨】只要还有未收集字段，绝对不可以说\"推荐阿姨\"\"帮您推荐\"等\n\n【输出】\n- 输出一段 50-300 字的微信式口语回复\n- 不要输出 JSON，不要输出\"小书:\"前缀\n- 不要重述已知信息（服务类型/姓名/城市），直接进入当前问题\n- 用\"咱们\"等口语化称呼，避免机器感\n- 不承诺\"一定能找到\"——说\"会推荐 3 位匹配阿姨简历\"",
+    "modelID": "2015"
+  },
+  "createdAt": 1786351983092,
+  "updatedAt": 1786626504589,
+  "createdBy": 7664449830109842612
+}

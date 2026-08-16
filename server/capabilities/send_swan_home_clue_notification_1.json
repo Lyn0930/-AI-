@@ -1,0 +1,45 @@
+{
+  "id": "send_swan_home_clue_notification_1",
+  "pluginKey": "@official-plugins/send-feishu-message",
+  "pluginVersion": "1.0.29",
+  "name": "天鹅到家线索系统关键节点通知",
+  "description": "用于天鹅到家线索系统的关键节点通知运营人员，包括新线索接入、需求收集完成等场景",
+  "icon": "",
+  "paramsSchema": {
+    "required": [
+      "title",
+      "content",
+      "receiverUserList"
+    ],
+    "type": "object",
+    "properties": {
+      "receiverUserList": {
+        "type": "array",
+        "description": "接收消息的用户ID列表",
+        "items": {
+          "type": "string",
+          "description": "用户ID"
+        }
+      },
+      "title": {
+        "type": "string",
+        "description": "消息通知标题"
+      },
+      "content": {
+        "description": "消息通知正文内容",
+        "type": "string"
+      }
+    }
+  },
+  "formValue": {
+    "content": "{{input.content}}",
+    "receiverUserList": "{{input.receiverUserList}}",
+    "receiverGroupList": [],
+    "sender": "bot",
+    "buttons": [],
+    "title": "{{input.title}}"
+  },
+  "createdAt": 1786351978488,
+  "updatedAt": 1786351978488,
+  "createdBy": 7664449830109842612
+}
